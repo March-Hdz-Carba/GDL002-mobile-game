@@ -16,15 +16,14 @@ class Header extends Component {
 
 const styles = StyleSheet.create({
     container: {
-      backgroundColor: "black",
       flexDirection: "row",
       marginTop: 20,
     },
   
     title: {
-      color: "white",
+      color: "#ffedf2",
       fontWeight: "bold",
-      fontSize: 20,
+      fontSize: 25,
       flex: 1,
       textAlign: "center", 
       fontFamily: "Roboto",

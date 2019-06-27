@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { StyleSheet, View, TouchableOpacity, Alert, Button, ImageBackground, Image } from 'react-native';
-import { MaterialCommunityIcons as Icon } from "react-native-vector-icons";
+//import { MaterialCommunityIcons as Icon } from "react-native-vector-icons";
 import { FontAwesome as IconNave } from "react-native-vector-icons";
 import Header from "./components/Header";
 
@@ -44,23 +44,23 @@ export default class App extends Component {
     //check rows
     for (let i = 0; i < numTile; i++)
       sum = arr[i][0] + arr[i][1] + arr[i][2];
-      if (sum === 3) {return 1, 1 }
-      else if (sum === -3) {return -1, 1 }
+      if (sum === 3) {return 1 }
+      else if (sum === -3) {return -1 }
 
     //check columns
     for (let i = 0; i < numTile; i++)
       sum = arr[0][i] + arr[1][i] + arr[2][i];
-      if (sum === 3) {return 1, 0 }
-      else if (sum === -3) {return -1, 0 }
+      if (sum === 3) {return 1 }
+      else if (sum === -3) {return -1 }
       
     //check diagonal
       sum = arr[0][0] + arr[1][1] + arr[2][2];
-      if (sum === 3) {return 1, 2 }
-      else if (sum === -3) {return -1, 2 }
+      if (sum === 3) {return 1 }
+      else if (sum === -3) {return -1 }
       
       sum = arr[2][0] + arr[1][1] + arr[0][2];
-      if (sum === 3) {return 1, 3 }
-      else if (sum === -3) {return -1, 3 }
+      if (sum === 3) {return 1 }
+      else if (sum === -3) {return -1 }
 
     //No winners
     let draw = 0;
@@ -112,8 +112,8 @@ export default class App extends Component {
     let value = this.state.gameState[row][col];
     switch (value) 
     {
-      case 1: return <IconNave name="rocket" style={styles.tileX} />;
-      case -1: return <Icon name="alien" style={styles.tileO} />;
+      case 1: return <Image source={require("../CatGame/assets/cohete.png")} style={styles.tileO} />;
+      case -1: return <Image source={require("../CatGame/assets/ovni.png")} style={styles.tileO} />;
       default: return <View />;
     }
   }
@@ -121,7 +121,7 @@ export default class App extends Component {
 render(){
   return (
     <View style={styles.container}>
-      <ImageBackground source={require("../CatGame/assets/space.jpg")} style={styles.container}>
+      <ImageBackground source={require("../CatGame/assets/fondoSpace.png")} style={styles.container}>
       <Header />
 
         <View style={styles.container}>
@@ -169,7 +169,7 @@ render(){
       </View>
 
         
-  
+
 
     
     );
@@ -185,7 +185,7 @@ const styles = StyleSheet.create({
 
   tile: {
     borderWidth: 5,
-    borderColor: "#ec7c26",
+    borderColor: "white",
     width: 100,
     height: 100
   },
@@ -199,12 +199,12 @@ const styles = StyleSheet.create({
   },
 
   tileO: {
-    color: "#1FF310",
-    fontSize: 75,
-    flex: 1,
     alignItems: "center",
     justifyContent: 'center',
-
+    marginLeft: "15%",
+    marginTop: "15%",
+    width: 60,
+    height: 60,
   },
   newGame:{
     paddingTop: 30,

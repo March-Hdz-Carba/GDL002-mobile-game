@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { StyleSheet, View, TouchableOpacity, Alert, Button, ImageBackground, Image } from 'react-native';
-import Header from "./components/Header";
+import Header from "./Header";
 
 export default class App extends Component {
   constructor(props) {
@@ -155,8 +155,8 @@ export default class App extends Component {
     let value = this.state.gameState[row][col];
     switch (value) 
     {
-      case 1: return <Image source={require("../CatGame/assets/cohete.png")} style={styles.tileO} />;
-      case -1: return <Image source={require("../CatGame/assets/ovni.png")} style={styles.tileO} />;
+      case 1: return <Image source={require("../assets/cohete.png")} style={styles.tileO} />;
+      case -1: return <Image source={require("../assets/ovni.png")} style={styles.tileO} />;
       default: return <View />;
     }
   };
@@ -164,7 +164,7 @@ export default class App extends Component {
 render(){
   return (
     <View style={styles.container}>
-      <ImageBackground source={require("../CatGame/assets/fondoSpace.png")} style={styles.container}>
+      <ImageBackground source={require("../assets/fondoSpace.png")} style={styles.container}>
       <Header />
 
         <View style={styles.container}>
